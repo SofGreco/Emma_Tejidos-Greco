@@ -1,0 +1,11 @@
+@mixin nav {
+    display: flex;
+justify-content: space-between;
+list-style: none;
+margin: 20px 0px
+}
+
+@mixin navBtn {
+    padding: 7px 10px;
+     margin: 0px 10px;
+}

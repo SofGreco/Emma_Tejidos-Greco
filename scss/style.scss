@@ -1,4 +1,7 @@
 @import 'variables';
+@import 'fonts';
+@import 'mixins';
+@import 'main';
 
 * {
     margin: 0px;
@@ -11,7 +14,7 @@
      font-size: 62.5%;
  }
  body {
-     background-image: linear-gradient(to right, rgb(224, 195, 178), rgb(236, 230, 227));
+     background-image: linear-gradient(to right, #e0c3b2, #ece6e3);
      font-family: serif;
  }
 
@@ -28,8 +31,7 @@
 /*Foto logo*/
 nav a img {
     width: 100px;
-    position:sticky;
-}
+    position:sticky;}
 
  .navbar2 li a img{
      width: 20px;
@@ -37,16 +39,12 @@ nav a img {
 
 /*Separar nav margen*/
  nav{
-     display: flex;
-     justify-content: space-between;
-     list-style: none;
-     margin: 20px 0px;
+     @include nav
  }
  /*Caracteristicas nav*/
  nav ul li{
+     @include navBtn
      display: inline-block;
-     padding: 7px 10px;
-     margin: 0px 10px;
      font-style: italic;
      font-family: serif;
      font-size: 2rem;
@@ -55,48 +53,18 @@ nav a img {
 
 /*Botones nav*/
  nav ul li a {
-    color: sienna;
+    @include navBtn
+    color: $fontcolor;
     text-decoration: none;
-    padding: 7px 10px;
-    margin: 0px 10px;
-    border: 1px solid saddlebrown;
-    background-color: rgb(241, 237, 235);
+    border: 1px solid $bordercolor;
+    background-color: $navcolor;
 }
 
  nav ul li a:hover{
-     color:rgb(199, 164, 148);
+    @include navBtn
+     color:$hoovercolor;
      text-decoration: none;
-     padding: 7px 10px;
-     margin: 0px 10px;
-     border: 1px solid rgb(212, 152, 108);
- }
-
- /*main*/
- main{
-     margin-top: 20px;
-     text-align: center;
-     font-size: 2rem;
-     font-family: serif;
-     font-weight: normal;
-     font-style: italic;
-     line-height: 1.6;
- }
-
- .carousel-item {
-     width: 640px;
-     height: 360px;
- }
-/*Titulo*/
- h1{
-     font-size: 3rem;
-     font-family: serif;
-     font-weight: lighter;
-     color: rgb(158, 71, 0);
-     margin: 20px 20px;
- }
-/*Foto debajo del titulo*/
- main img{
-     width: 300px;
+     border: 1px solid $hooverline;
  }
 
  /*Footer*/
@@ -112,8 +80,8 @@ nav a img {
  }
 /*Texto footer*/
  footer p{
-     background-color: rgb(241, 237, 235);
-     color: sienna;
+     background-color: $navcolor;
+     color: $fontcolor;
      font-size: 2rem;
      font-family: serif;
      text-align: center ;
@@ -172,5 +140,5 @@ nav a img {
 }
 
 .catalogoGrid h4{
-    color: sienna;
+    color: $fontcolor;
 }
